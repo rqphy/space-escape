@@ -18,7 +18,15 @@ laser.src = "../assets/laser.png";
 
 let friendlyShipY = 325;
 let enemyShipY = 325;
+let speed = 5;
+let distance = 861;
+let life = 25;
 
+let heals = [];
+heals[0] = {
+  x: canvas.width,
+  y: 225
+};
 //Move
 
 function onKeyDown(event) {
@@ -48,12 +56,64 @@ function onKeyDown(event) {
   }
 }
 
+//HealSpawn
+function randomSpawn(max, min) {
+  let n;
+  while (n % 25 !== 0) {
+    n = Math.floor(Math.random() * (max - min) + min);
+  }
+  return n;
+}
+
+function toto() {
+  heals.push({
+    x: canvas.width,
+    //y: Math.floor(Math.random() * 700 + 25)
+    y: randomSpawn(700, 25)
+  });
+}
+function healSpawn() {
+  for (let i = 0; i < heals.length; i++) {
+    context.drawImage(heal, heals[i].x, heals[i].y, 50, 50);
+    heals[i].x -= speed;
+    if (heals[i].x === distance) {
+      toto();
+    }
+  }
+}
+
+//Hitbox
+
+function hitbox() {
+  for (let i = 0; i < heals.length; i++) {
+    if (
+      heals[i].x <= friendlyShip.width + 30 &&
+      ((heals[i].y >= friendlyShipY &&
+        heals[i].y <= friendlyShipY + friendlyShip.height) ||
+        (heals[i].y + heals[i].height <= friendlyShipY + friendlyShip.height &&
+          heals[i].y + heals[i].height >= friendlyShipY))
+    ) {
+      console.log("TOUCHED");
+      heals.shift(i, 1);
+      if (life <= 97) {
+        life += 3;
+      }
+    } else if (heals[i].x <= -45) {
+      heals.shift(i, 1);
+      console.log(heals.length);
+    }
+  }
+}
+
 //Draw
 function draw() {
   context.drawImage(background, 0, 0);
+  hitbox();
+  healSpawn();
   context.drawImage(friendlyShip, 30, friendlyShipY, 100, 100);
   window.addEventListener("keydown", onKeyDown);
   context.drawImage(enemyShip, canvas.width - 130, enemyShipY, 100, 100);
+
   requestAnimationFrame(draw);
 }
 
