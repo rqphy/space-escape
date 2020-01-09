@@ -14,12 +14,6 @@ function nextpage() {
       oxo.screens.loadScreen("end", function() {});
     }
   });
-  //     nbEnter = nbEnter + 1;
-  //     if (nbEnter == 2) {
-  //       oxo.screens.loadScreen("end", function() {});
-  //     }
-  //   }
-  // });
 }
 nextpage();
 
