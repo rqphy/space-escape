@@ -8,6 +8,7 @@ const enemyShip = new Image();
 const heal = new Image();
 const laser = new Image();
 const healthbar = new Image();
+const titan = new Image();
 
 background.src = "../assets/background.png";
 friendlyShip.src = "../assets/spaceship1.png";
@@ -15,6 +16,7 @@ enemyShip.src = "../assets/spaceship2.png";
 heal.src = "../assets/heal.png";
 laser.src = "../assets/laser.png";
 healthbar.src = "../assets/healthbar.png";
+titan.src = "../assets/titan.png";
 
 //Variables
 
@@ -35,8 +37,10 @@ lasers[0] = {
   x: canvas.width - 130,
   y: enemyShipY + 50
 };
-let firespeed = 5;
-let firerate = 836;
+let firespeed = 10;
+let firerate = 916;
+
+let titanX = canvas.width;
 
 //Move
 
@@ -64,6 +68,20 @@ function onKeyDown(event) {
       break;
     default:
       break;
+  }
+}
+
+//DrawTitan
+
+function moveTitan() {
+  titanX -= 0.5;
+}
+
+//HitBox
+
+function win() {
+  if (titanX < 30) {
+    alert("Player 1 Win");
   }
 }
 
@@ -110,11 +128,10 @@ function hitboxHeals() {
       console.log("HEALED");
       heals.shift(i, 1);
       if (life <= 97) {
-        life += 3;
+        life += 5;
       }
     } else if (heals[i].x <= -45) {
       heals.shift(i, 1);
-      console.log(heals.length);
     }
   }
 }
@@ -145,9 +162,8 @@ function hitboxLasers() {
       console.log("TOUCHED");
       lasers.shift(i, 1);
       life -= 33;
-    } else if (lasers[i].x <= -45) {
+    } else if (lasers[i].x <= 0) {
       lasers.shift(i, 1);
-      console.log(lasers.length);
     }
   }
 }
@@ -163,12 +179,27 @@ function health() {
   }
 }
 
+function firelife() {
+  if (life >= 10) {
+    setInterval(() => {
+      life--;
+    }, 1000);
+  }
+}
+
+function lifetot() {
+  context.fillStyle = "#FFF";
+  context.font = "20px Verdana";
+  context.fillText(life + "%", 30, 60);
+}
+
 //Draw
 function draw() {
   context.drawImage(background, 0, 0);
   hitboxHeals();
   healSpawn();
-
+  context.drawImage(titan, titanX, 300, 300, 300);
+  moveTitan();
   context.drawImage(friendlyShip, 30, friendlyShipY, 100, 100);
   window.addEventListener("keydown", onKeyDown);
   hitboxLasers();
@@ -176,7 +207,10 @@ function draw() {
   context.drawImage(enemyShip, canvas.width - 130, enemyShipY, 100, 100);
   context.drawImage(healthbar, 30, 10, life * 2, 30);
   health();
+  lifetot();
+  win();
   requestAnimationFrame(draw);
 }
 
 draw();
+firelife();
