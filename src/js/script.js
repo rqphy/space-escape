@@ -3,9 +3,13 @@ function nextpage() {
   oxo.inputs.listenKey("enter", function() {
     nbEnter = nbEnter + 1;
     if (nbEnter == 1) {
-      oxo.screens.loadScreen("game", game);
+      oxo.screens.loadScreen("homev2", function() {});
+      console.log("test");
     }
     if (nbEnter == 2) {
+      oxo.screens.loadScreen("game", game);
+    }
+    if (nbEnter == 3) {
       oxo.screens.loadScreen("end", function() {});
     }
   });

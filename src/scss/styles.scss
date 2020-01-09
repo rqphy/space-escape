@@ -1,3 +1,6 @@
-@import 'vendors/reset';
+@import "vendors/reset";
 
-@import 'global/layout';
+@import "blocs/home";
+@import "blocs/homev2";
+
+@import "global/layout";

@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Minecraft";
+  src: url("../fonts/Minecraft.ttf") format("ttf");
+}
+body.home {
+  background: no-repeat url("../assets/background.png");
+  height: 750px;
+  width: 1366px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  margin-top: -100px;
+}
+.title {
+  height: 350px;
+  width: 350px;
+}
+
+.homes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+h1 {
+  font-family: "Minecraft";
+  color: aliceblue;
+  bottom: 380px;
+  left: 40%;
+  font-size: 30pt;
+}
+
+.blink_me {
+  animation: blinker 1.5s linear infinite;
+  margin: 0 200px;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+p {
+  font-family: "Minecraft";
+  color: aliceblue;
+  font-size: 20pt;
+
+  .player1 {
+    bottom: 310px;
+    left: 14%;
+  }
+
+  .player2 {
+    bottom: 310px;
+    right: 14%;
+  }
+}
+
+.is-hidden {
+  display: none;
+}

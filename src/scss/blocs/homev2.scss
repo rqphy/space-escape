@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "Minecraft";
+  src: url("../fonts/Minecraft.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+body.homev2 {
+  background-image: url("../assets/home2background.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline white;
+}
+h1 {
+  font-family: "Minecraft";
+  color: aliceblue;
+}
+.press {
+  animation: blinker 1.5s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.begin {
+  width: 50%;
+  margin-left: 25%;
+  height: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+figcaption {
+  font-family: "Minecraft";
+  color: aliceblue;
+}
+
+.arrows {
+  height: 50px;
+  width: 250px;
+}
+.text_img {
+  text-align: center;
+}
+.up {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: -130px;
+}
+.upz {
+  margin-left: -10px;
+}
+
+p {
+  font-family: "Minecraft";
+  color: aliceblue;
+  float: right;
+  font-size: 30px;
+}
+.bouton_Z {
+  width: 100px;
+
+  height: 100px;
+}
+.zgo_up {
+  margin-left: 15px;
+}
+.arrow_up {
+  width: 100px;
+  height: 100px;
+}
+
+.argo_up {
+  margin-left: 15px;
+}
+
+.bouton_s {
+  width: 100px;
+  height: 100px;
+  margin-left: 15px;
+}
+.down {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+.arrow_down {
+  width: 100px;
+  height: 100px;
+}
+
+.s_down {
+  margin-left: 15px;
+}
+
+.f_down {
+  margin-left: 15px;
+}
