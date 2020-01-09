@@ -75,6 +75,7 @@ function game() {
   let firerate = 916;
 
   let titanX = canvas.width;
+  let screen = 0;
 
   //Move
 
@@ -115,7 +116,7 @@ function game() {
 
   function win() {
     if (titanX < 30) {
-      alert("Player 1 Win");
+      screen = 1;
     }
   }
 
@@ -160,7 +161,6 @@ function game() {
             friendlyShipY + friendlyShip.height &&
             heals[i].y + heals[i].height >= friendlyShipY))
       ) {
-        console.log("HEALED");
         heals.shift(i, 1);
         if (life <= 97) {
           life += 5;
@@ -194,7 +194,6 @@ function game() {
             friendlyShipY + friendlyShip.height &&
             lasers[i].y + lasers[i].height >= friendlyShipY))
       ) {
-        console.log("TOUCHED");
         lasers.shift(i, 1);
         life -= 33;
       } else if (lasers[i].x <= 0) {
@@ -207,7 +206,6 @@ function game() {
 
   function health() {
     if (life <= 0) {
-      alert("lose");
       life = 50;
     } else if (life > 100) {
       life = 100;

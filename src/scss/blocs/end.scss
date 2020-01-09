@@ -1,0 +1,41 @@
+* {
+  font-family: "Minecraft";
+  color: white;
+  font-size: 30px;
+}
+
+@font-face {
+  font-family: "Minecraft";
+  src: url("../fonts/Minecraft.ttf");
+}
+body.end {
+  background: no-repeat url("../assets/background.png");
+  height: 750px;
+  width: 1366px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spaceship {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.win {
+  padding: 10px;
+  margin: 20px;
+  text-align: center;
+  animation: blinker 1.5s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.again {
+  padding: 10px;
+  text-align: center;
+}
