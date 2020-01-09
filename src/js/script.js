@@ -36,7 +36,7 @@ function game() {
   const healthbar = new Image();
   const titan = new Image();
 
-  let backgroundSrc = require("../assets/background.png");
+  let backgroundSrc = require("../assets/gamebg.png");
   let friendlyShipSrc = require("../assets/spaceship1.png");
   let enemyShipSrc = require("../assets/spaceship2.png");
   let healSrc = require("../assets/heal.png");
@@ -231,9 +231,9 @@ function game() {
   //Draw
   function draw() {
     context.drawImage(background, 0, 0);
+    context.drawImage(titan, titanX, 300, 300, 300);
     hitboxHeals();
     healSpawn();
-    context.drawImage(titan, titanX, 300, 300, 300);
     moveTitan();
     context.drawImage(friendlyShip, 30, friendlyShipY, 100, 100);
     window.addEventListener("keydown", onKeyDown);
