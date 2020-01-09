@@ -74,7 +74,7 @@ function onKeyDown(event) {
 //DrawTitan
 
 function moveTitan() {
-  titanX -= 0.3;
+  titanX -= 0.5;
 }
 
 //HitBox
@@ -128,7 +128,7 @@ function hitboxHeals() {
       console.log("HEALED");
       heals.shift(i, 1);
       if (life <= 97) {
-        life += 3;
+        life += 5;
       }
     } else if (heals[i].x <= -45) {
       heals.shift(i, 1);
