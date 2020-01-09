@@ -75,7 +75,6 @@ function game() {
   let firerate = 916;
 
   let titanX = canvas.width;
-  let screen = 0;
 
   //Move
 
@@ -116,7 +115,7 @@ function game() {
 
   function win() {
     if (titanX < 30) {
-      screen = 1;
+      oxo.screens.loadScreen("end", function() {});
     }
   }
 
@@ -206,7 +205,7 @@ function game() {
 
   function health() {
     if (life <= 0) {
-      life = 50;
+      oxo.screens.loadScreen("end2", function() {});
     } else if (life > 100) {
       life = 100;
     }
