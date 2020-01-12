@@ -2,7 +2,47 @@
   font-family: "Minecraft";
   src: url("../fonts/Minecraft.ttf") format(ttf);
 }
+
 body.home {
+  background: no-repeat url("../assets/background.png");
+  height: 750px;
+  width: 1366px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title__image {
+  width: 400px;
+  height: 160px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 100px;
+  width: 1024px;
+  height: 200px;
+}
+
+.container__ingame {
+  font-family: "Minecraft";
+  font-size: 30px;
+  text-transform: uppercase;
+  margin: 0px 100px;
+  animation: blinker 1.5s linear infinite;
+}
+
+figure {
+  text-align: center;
+  font-family: "Minecraft";
+  font-size: 20px;
+}
+
+/* body.home {
   background: no-repeat url("../assets/background.png");
   height: 750px;
   width: 1366px;
@@ -63,3 +103,4 @@ p {
 .is-hidden {
   display: none;
 }
+ */
