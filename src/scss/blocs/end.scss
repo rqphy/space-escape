@@ -1,13 +1,19 @@
+@font-face {
+  font-family: "Minecraft";
+  src: url("../fonts/Minecraft.ttf") format(ttf);
+}
 * {
   font-family: "Minecraft";
   color: white;
   font-size: 30px;
 }
 
-@font-face {
+p {
   font-family: "Minecraft";
-  src: url("../fonts/Minecraft.ttf");
+  color: white;
+  font-size: 30px;
 }
+
 body.end,
 body.end2 {
   background: no-repeat url("../assets/background.png");

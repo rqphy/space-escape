@@ -10,9 +10,6 @@ function nextpage() {
     if (nbEnter == 2) {
       oxo.screens.loadScreen("game", game);
     }
-    if (nbEnter == 3) {
-      oxo.screens.loadScreen("end", function() {});
-    }
   });
 }
 nextpage();
