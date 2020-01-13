@@ -68,6 +68,8 @@ function game() {
   let firespeed = 10;
   let firerate = 916;
 
+  let gameover = false;
+
   let titanX = canvas.width;
 
   //Move
@@ -110,6 +112,7 @@ function game() {
   function win() {
     if (titanX < 30) {
       oxo.screens.loadScreen("end", function() {});
+      gameover = true;
     }
   }
 
@@ -199,7 +202,11 @@ function game() {
 
   function health() {
     if (life <= 0) {
+      if (life < 0) {
+        life = 0;
+      }
       oxo.screens.loadScreen("end2", function() {});
+      gameover = true;
     } else if (life > 100) {
       life = 100;
     }
@@ -235,7 +242,9 @@ function game() {
     health();
     lifetot();
     win();
-    requestAnimationFrame(draw);
+    if (gameover == false) {
+      requestAnimationFrame(draw);
+    }
   }
 
   draw();
