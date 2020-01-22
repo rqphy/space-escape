@@ -14,6 +14,12 @@ function nextpage() {
 }
 nextpage();
 
+function reloader() {
+  oxo.inputs.listenKey("enter", function() {
+    window.location.reload();
+  });
+}
+
 function game() {
   const canvas = document.getElementById("canvas");
   const context = canvas.getContext("2d");
@@ -110,6 +116,7 @@ function game() {
     if (titanX < 30) {
       oxo.screens.loadScreen("end", function() {});
       gameover = true;
+      reloader();
     }
   }
 
@@ -204,6 +211,7 @@ function game() {
       }
       oxo.screens.loadScreen("end2", function() {});
       gameover = true;
+      reloader();
     } else if (life > 100) {
       life = 100;
     }
