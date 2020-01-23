@@ -1,17 +1,29 @@
 function nextpage() {
   var nbEnter = 0;
   oxo.inputs.listenKey("enter", function() {
-    nbEnter = nbEnter + 1;
+    nbEnter++;
     if (nbEnter == 1) {
       oxo.screens.loadScreen("homev2", function() {
         console.log("test");
       });
     }
+
     if (nbEnter == 2) {
-      oxo.screens.loadScreen("game", game);
+      let timer = 3;
+      let h1 = document.getElementById("countdown");
+      let countdown;
+      countdown = setInterval(function() {
+        h1.innerHTML = timer;
+        timer--;
+        if (timer == -2) {
+          clearInterval(countdown);
+          oxo.screens.loadScreen("game", game);
+        }
+      }, 1000);
     }
   });
 }
+
 nextpage();
 
 function reloader() {
