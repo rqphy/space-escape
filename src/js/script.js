@@ -15,7 +15,7 @@ function nextpage() {
       countdown = setInterval(function() {
         h1.innerHTML = timer;
         timer--;
-        if (timer == -2) {
+        if (timer == -1) {
           clearInterval(countdown);
           oxo.screens.loadScreen("game", game);
         }
@@ -66,6 +66,7 @@ function game() {
   let friendlyShipY = 325;
   let enemyShipY = 325;
   let life = 50;
+  let domage = 15;
 
   let heals = [];
   heals[0] = {
@@ -81,7 +82,7 @@ function game() {
     y: enemyShipY + 50
   };
   let firespeed = 10;
-  let firerate = 916;
+  let firerate = 1016;
 
   let gameover = false;
 
@@ -207,7 +208,7 @@ function game() {
             lasers[i].y + lasers[i].height >= friendlyShipY))
       ) {
         lasers.shift(i, 1);
-        life -= 33;
+        life -= domage;
       } else if (lasers[i].x <= 0) {
         lasers.shift(i, 1);
       }
