@@ -67,6 +67,8 @@ function game() {
   let enemyShipY = 325;
   let life = 50;
   let domage = 15;
+  let backgroundX = 0;
+  let backgroundSpeed = 0.3;
 
   let heals = [];
   heals[0] = {
@@ -221,6 +223,12 @@ function game() {
     }
   }
 
+  //Move background
+
+  function moveBackground() {
+    backgroundX -= backgroundSpeed;
+  }
+
   //Healthbar
 
   function health() {
@@ -256,8 +264,9 @@ function game() {
   }
 
   function caller() {
-    context.drawImage(background, 0, 0);
+    context.drawImage(background, backgroundX, 0);
     context.drawImage(titan, titanX, 300, 300, 300);
+    moveBackground();
     hitboxHeals();
     healSpawn();
     moveTitan();
