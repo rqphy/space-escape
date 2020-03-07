@@ -18,22 +18,21 @@ body.home {
   height: 160px;
 }
 
-.container {
+.home {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  margin-top: 100px;
   width: 1024px;
   height: 200px;
-}
 
-.container__ingame {
-  font-family: "Minecraft";
-  font-size: 30px;
-  text-transform: uppercase;
-  margin: 0px 100px;
-  animation: blinker 1.5s linear infinite;
+  &__ingame {
+    font-family: "Minecraft";
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 0px 100px;
+    animation: blinker 1.5s linear infinite;
+  }
 }
 
 figure {

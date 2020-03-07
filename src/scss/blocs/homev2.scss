@@ -24,7 +24,7 @@ body.homev2 {
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: row;
   margin-top: 100px;
   width: 1024px;
@@ -37,8 +37,12 @@ body.homev2 {
     margin: 0px 30px;
   }
 
-  &__ingame {
-    margin: 0px 100px;
+  &__ingames {
+    text-align: center;
+    width: 450px;
+    font-family: "Minecraft";
+    font-size: 40px;
+    text-transform: uppercase;
     animation: blinker 1.5s linear infinite;
   }
 }

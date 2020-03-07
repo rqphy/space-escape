@@ -246,8 +246,13 @@ function game() {
 
   function lifetot() {
     context.fillStyle = "#FFF";
-    context.font = "20px Verdana";
-    context.fillText(life + "%", 30, 60);
+    context.font = "20px Minecraft";
+    context.fillText(life + "%", 663, 63);
+  }
+  function lifename() {
+    context.fillStyle = "#FFF";
+    context.font = "20px Minecraft";
+    context.fillText("PLAYER 1'S LIFE :", 583, 30);
   }
 
   function caller() {
@@ -261,9 +266,10 @@ function game() {
     hitboxLasers();
     lasersSpawn();
     context.drawImage(enemyShip, canvas.width - 130, enemyShipY, 100, 100);
-    context.drawImage(healthbar, 30, 10, life * 2, 30);
+    context.drawImage(healthbar, 583, 40, life * 2, 30);
     health();
     lifetot();
+    lifename();
     win();
   }
 
