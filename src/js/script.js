@@ -88,6 +88,12 @@ function game() {
 
   let titanX = canvas.width;
 
+  var fps = 50;
+  var now;
+  var then = Date.now();
+  var interval = 1000 / fps;
+  var delta;
+
   //Move
 
   function onKeyDown(event) {
@@ -244,8 +250,7 @@ function game() {
     context.fillText(life + "%", 30, 60);
   }
 
-  //Draw
-  function draw() {
+  function caller() {
     context.drawImage(background, 0, 0);
     context.drawImage(titan, titanX, 300, 300, 300);
     hitboxHeals();
@@ -260,8 +265,19 @@ function game() {
     health();
     lifetot();
     win();
+  }
+
+  //Draw
+  function draw() {
     if (gameover == false) {
       requestAnimationFrame(draw);
+    }
+    now = Date.now();
+    delta = now - then;
+
+    if (delta > interval) {
+      then = now - (delta % interval);
+      caller();
     }
   }
 
