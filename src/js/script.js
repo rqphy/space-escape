@@ -4,7 +4,7 @@ function nextpage() {
     nbEnter++;
     if (nbEnter == 1) {
       oxo.screens.loadScreen("homev2", function() {
-        console.log("test");
+        // console.log("test");
       });
     }
 
@@ -45,13 +45,13 @@ function game() {
   const healthbar = new Image();
   const titan = new Image();
 
-  let backgroundSrc = require("../assets/gamebg.png");
-  let friendlyShipSrc = require("../assets/spaceship1.png");
-  let enemyShipSrc = require("../assets/spaceship2.png");
-  let healSrc = require("../assets/heal.png");
-  let laserSrc = require("../assets/laser.png");
-  let healthbarSrc = require("../assets/healthbar.png");
-  let titanSrc = require("../assets/titan.png");
+  const backgroundSrc = require("../assets/gamebg.png");
+  const friendlyShipSrc = require("../assets/spaceship1.png");
+  const enemyShipSrc = require("../assets/spaceship2.png");
+  const healSrc = require("../assets/heal.png");
+  const laserSrc = require("../assets/laser.png");
+  const healthbarSrc = require("../assets/healthbar.png");
+  const titanSrc = require("../assets/titan.png");
 
   background.src = backgroundSrc;
   friendlyShip.src = friendlyShipSrc;
@@ -66,7 +66,7 @@ function game() {
   let friendlyShipY = 325;
   let enemyShipY = 325;
   let life = 50;
-  let domage = 15;
+  const domage = 15;
   let backgroundX = 0;
   let backgroundSpeed = 0.3;
 
@@ -75,26 +75,26 @@ function game() {
     x: canvas.width,
     y: 225
   };
-  let distance = 861;
-  let speed = 5;
+  const distance = 861;
+  const speed = 5;
 
   let lasers = [];
   lasers[0] = {
     x: canvas.width - 130,
     y: enemyShipY + 50
   };
-  let firespeed = 10;
-  let firerate = 1016;
+  const firespeed = 10;
+  const firerate = 1016;
 
   let gameover = false;
 
   let titanX = canvas.width;
 
-  var fps = 50;
-  var now;
-  var then = Date.now();
-  var interval = 1000 / fps;
-  var delta;
+  const fps = 50;
+  let now;
+  let then = Date.now();
+  let interval = 1000 / fps;
+  let delta;
 
   //Move
 
