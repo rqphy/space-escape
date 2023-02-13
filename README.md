@@ -1,5 +1,7 @@
 # Space Escape
 
+## Main idea
+
 This my first school project ever! We’re a group of 5 freshmen who discovered Javascript 2 months ago. I’m fully in charge of the development.
 
 Here are the specifications:
