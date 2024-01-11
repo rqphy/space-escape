@@ -6,12 +6,14 @@ This my first school project ever! We’re a group of 5 freshmen who discovered 
 
 Here are the specifications:
 
-- Create the video game of your choice
-- The resolution will be fixed at 1366px by 750px
-- Needs to be in Javascript w/o framework
-- Deadline in 4 days
+-   Create the video game of your choice
+-   The resolution will be fixed at 1366px by 750px
+-   Needs to be in Javascript w/o framework
+-   Deadline in 4 days
 
 Ok here we go. Let’s try to make a multiplayer game. I don’t have any backend class yet, so it will be local multiplayer. Everyone in the group love Star Wars so we will create a spaceship game.
+
+[Live](https://space-escape2d.netlify.app/)
 
 ## The storytelling
 
