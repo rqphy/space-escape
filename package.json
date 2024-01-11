@@ -2,10 +2,9 @@
 	"name": "sass",
 	"version": "1.0.0",
 	"description": "",
-	"source": "src/index.html",
 	"scripts": {
 		"dev": "parcel src/index.html src/screens/*.html --no-cache",
-		"build": "parcel build --no-cache"
+		"build": "parcel build src/index.html src/screens/*.html --no-cache"
 	},
 	"keywords": [],
 	"author": "",
